@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Repository](https://github.com/Fbeye04/loopstudios-landing-page)
-- Live Site URL: [Live site](https://your-live-site-url.com)
+- Live Site URL: [Live site](https://loopstudios-landing-page-psi-five.vercel.app/)
 
 ## My process
 

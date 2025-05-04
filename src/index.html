@@ -17,28 +17,30 @@
   </head>
   <body class="flex flex-col justify-center items-center min-h-screen gap-5">
     <header
-      class="bg-[url('./images/mobile/image-hero.jpg')] lg:bg-[url('./images/desktop/image-hero.jpg')] bg-cover bg-no-repeat w-full lg:h-[400px] text-white px-8 py-10 md:px-16 md:py-14 mb-10 h-screen">
-      <div class="flex justify-between items-center">
+      class="bg-[url('./images/mobile/image-hero.jpg')] lg:bg-[url('./images/desktop/image-hero.jpg')] bg-cover bg-no-repeat w-full h-screen lg:h-[650px] text-white px-8 py-10 md:px-16 lg:px-24 md:py-14 mb-10">
+      <div class="flex justify-between items-center max-w-6xl mx-auto lg:px-14">
         <div>
           <img
             src="./images/logo.svg"
             alt="loopstudios logo"
-            class="w-[200px] md:w-[300px]" />
+            class="w-[200px] md:w-[300px] lg:w-[200px]" />
         </div>
 
-        <div>
+        <!-- for mobile/tablet -->
+        <div class="lg:hidden">
           <img
             src="./images/icon-hamburger.svg"
             alt="hamburger icon"
             id="menu-btn"
-            class="cursor-pointer w-[30px] h-[20px] md:w-[40px] md:h-[30px] transition-transform duration-200 hover:scale-110 lg:hidden" />
+            class="cursor-pointer w-[30px] h-[20px] md:w-[40px] md:h-[30px] transition-transform duration-200 hover:scale-110" />
         </div>
       </div>
 
       <nav
-        class="flex-col gap-40 fixed inset-0 bg-black p-10 md:px-18 md:py-16 text-2xl md:text-3xl overflow-hidden hidden lg:flex lg:bg-transparent lg:flex-row"
-        id="menu">
-        <div class="self-end">
+        id="menu"
+        class="flex-col gap-40 fixed inset-0 bg-black p-10 md:px-18 md:py-16 text-2xl md:text-3xl overflow-hidden hidden z-50 lg:static lg:flex lg:flex-row lg:bg-transparent lg:p-0 lg:text-base lg:justify-end lg:overflow-visible lg:gap-0 lg:mt-[-50px]">
+        <!-- for mobile/tablet -->
+        <div class="self-end lg:hidden">
           <img
             src="./images/icon-close.svg"
             alt="close icon"
@@ -47,49 +49,50 @@
         </div>
 
         <ul
-          class="flex flex-col items-start gap-5 md:gap-15 list-none uppercase font-light lg:flex-row lg:gap-10 lg:justify-center">
+          class="flex flex-col items-start gap-5 md:gap-15 list-none uppercase font-light lg:flex-row lg:gap-8 lg:items-center lg:mt-0 lg:mr-8">
           <li>
             <a
               href="#"
-              class="transition-colors duration-200 hover:text-amber-500"
+              class="transition-colors duration-200 hover:text-amber-500 lg:hover:text-white lg:hover:border-b-2 lg:border-white lg:pb-2"
               >About</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="transition-colors duration-200 hover:text-amber-500"
+              class="transition-colors duration-200 hover:text-amber-500 lg:hover:text-white lg:hover:border-b-2 lg:border-white lg:pb-2"
               >Careers</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="transition-colors duration-200 hover:text-amber-500"
+              class="transition-colors duration-200 hover:text-amber-500 lg:hover:text-white lg:hover:border-b-2 lg:border-white lg:pb-2"
               >Events</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="transition-colors duration-200 hover:text-amber-500"
+              class="transition-colors duration-200 hover:text-amber-500 lg:hover:text-white lg:hover:border-b-2 lg:border-white lg:pb-2"
               >Products</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="transition-colors duration-200 hover:text-amber-500"
+              class="transition-colors duration-200 hover:text-amber-500 lg:hover:text-white lg:hover:border-b-2 lg:border-white lg:pb-2"
               >Support</a
             >
           </li>
         </ul>
       </nav>
 
-      <section class="flex flex-col justify-center items-center h-full">
-        <div class="border-2 border-white p-5">
+      <section
+        class="flex flex-col justify-center items-center lg:items-start h-[80%] max-w-6xl mx-auto lg:mt-16 lg:px-14">
+        <div class="border-2 border-white p-5 lg:p-8 lg:max-w-xl">
           <h1
-            class="text-[40px] md:text-[55px] font-light uppercase font-josefin">
+            class="text-[40px] md:text-[60px] font-light uppercase font-josefin">
             Immersive experiences that deliver
           </h1>
         </div>
@@ -97,22 +100,29 @@
     </header>
 
     <main>
-      <section class="p-6 mt-5 mb-14">
-        <picture>
-          <source
-            media="(min-width: 900px)"
-            srcset="./images/desktop/image-interactive.jpg" />
-          <img
-            src="./images/mobile/image-interactive.jpg"
-            alt="loopstudios hero image"
-            class="mx-auto" />
-        </picture>
+      <section
+        class="p-6 mt-5 mb-14 md:px-14 lg:mt-16 lg:mb-32 relative max-w-6xl mx-auto">
+        <!-- Picture -->
+        <div class="lg:w-2/3 md:px-7">
+          <picture>
+            <source
+              media="(min-width: 900px)"
+              srcset="./images/desktop/image-interactive.jpg" />
+            <img
+              src="./images/mobile/image-interactive.jpg"
+              alt="loopstudios hero image"
+              class="mx-auto w-full" />
+          </picture>
+        </div>
 
-        <div class="text-center mt-10 px-7 md:px-12">
-          <h2 class="uppercase text-3xl md:text-4xl font-josefin font-light">
+        <!-- Text -->
+        <div
+          class="text-center mt-10 px-7 md:px-12 lg:absolute lg:bottom-0 lg:right-0 lg:w-1/2 lg:bg-white lg:pt-20 lg:pl-20 lg:pr-0 lg:pb-0 lg:mt-0 lg:text-left">
+          <h2
+            class="uppercase text-3xl md:text-4xl lg:text-5xl font-josefin font-light">
             The leader in interactive VR
           </h2>
-          <p class="text-gray-500 md:text-lg mt-5 font-alata">
+          <p class="text-gray-500 md:text-xl mt-5 font-alata">
             Founded in 2011, Loopstudios has been producing world-class virtual
             reality projects for some of the best companies around the globe.
             Our award-winning creations have transformed businesses through
@@ -122,10 +132,23 @@
       </section>
 
       <section class="px-6 md:px-8 uppercase font-josefin grid">
-        <h2 class="text-4xl text-center font-light">Our creations</h2>
+        <div class="lg:flex lg:justify-between lg:items-center lg:px-7">
+          <h2 class="text-4xl text-center lg:text-left font-light">
+            Our creations
+          </h2>
+
+          <!-- Button "See All" for desktop -->
+          <div class="hidden lg:block">
+            <a
+              href="#"
+              class="border border-black text-xl px-10 py-2 font-alata inline-block hover:bg-black hover:text-white transition-colors duration-300 uppercase"
+              >See all</a
+            >
+          </div>
+        </div>
 
         <div
-          class="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          class="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:px-7 lg:mb-20">
           <article class="group relative cursor-pointer">
             <picture>
               <source
@@ -309,7 +332,7 @@
           </article>
         </div>
 
-        <div class="flex justify-center">
+        <div class="flex justify-center lg:hidden">
           <a
             href="#"
             class="border border-black text-xl md:text-2xl mt-10 px-10 py-2 font-alata inline-block max-w-max hover:bg-black hover:text-white"
@@ -319,45 +342,98 @@
       </section>
     </main>
 
-    <footer
-      class="bg-black text-white flex flex-col justify-center items-center px-10 py-5 mt-16 w-full">
-      <div>
-        <img
-          src="./images/logo.svg"
-          alt="loopstudios logo"
-          class="md:w-[250px]" />
-      </div>
-
-      <div>
+    <footer class="bg-black text-white px-10 py-12 mt-16 w-full">
+      <div class="container mx-auto max-w-6xl lg:px-14">
+        <!-- Logo dan Menu -->
         <div
-          class="flex justify-center gap-5 my-5 cursor-pointer transition-shadow duration-300 hover:shadow-lg">
-          <img
-            src="./images/icon-facebook.svg"
-            alt="facebook icon"
-            class="transition-all duration-300 transform hover:scale-105 hover:brightness-125 h-auto md:w-[40px]" />
-          <img
-            src="./images/icon-twitter.svg"
-            alt="twitter icon"
-            class="transition-all duration-300 transform hover:scale-105 hover:brightness-125 h-auto md:w-[40px]" />
-          <img
-            src="./images/icon-pinterest.svg"
-            alt="pinterest icon"
-            class="transition-all duration-300 transform hover:scale-105 hover:brightness-125 h-auto md:w-[40px]" />
-          <img
-            src="./images/icon-instagram.svg"
-            alt="instagram icon"
-            class="transition-all duration-300 transform hover:scale-105 hover:brightness-125 h-auto md:w-[40px]" />
+          class="flex flex-col lg:flex-row lg:justify-between items-center mb-8">
+          <div class="mb-6 lg:mb-0">
+            <img
+              src="./images/logo.svg"
+              alt="loopstudios logo"
+              class="w-[150px] md:w-[180px]" />
+          </div>
+
+          <!-- Footer Menu -->
+          <div>
+            <ul
+              class="flex flex-col lg:flex-row items-center gap-5 lg:gap-8 list-none">
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-200 hover:text-amber-500"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-200 hover:text-amber-500"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-200 hover:text-amber-500"
+                  >Events</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-200 hover:text-amber-500"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-colors duration-200 hover:text-amber-500"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <p class="my-5 text-center md:text-xl">
-          © 2021 Loopstudios. All rights reserved. Created by
-          <a
-            href="https://www.linkedin.com/in/muhammad-fachrezi-barus/"
-            class="text-blue-600 cursor-pointer"
-            target="_blank"
-            >Fachrezi</a
-          >
-        </p>
+        <div class="flex flex-col lg:flex-row lg:justify-between items-center">
+          <!-- Social Media -->
+          <div class="flex justify-center gap-5 mb-6 lg:mb-0 lg:order-2">
+            <a
+              href="#"
+              class="transition-transform duration-300 hover:scale-110">
+              <img src="./images/icon-facebook.svg" alt="facebook icon" />
+            </a>
+            <a
+              href="#"
+              class="transition-transform duration-300 hover:scale-110">
+              <img src="./images/icon-twitter.svg" alt="twitter icon" />
+            </a>
+            <a
+              href="#"
+              class="transition-transform duration-300 hover:scale-110">
+              <img src="./images/icon-pinterest.svg" alt="pinterest icon" />
+            </a>
+            <a
+              href="#"
+              class="transition-transform duration-300 hover:scale-110">
+              <img src="./images/icon-instagram.svg" alt="instagram icon" />
+            </a>
+          </div>
+
+          <!-- Copyright -->
+          <div class="lg:order-1">
+            <p class="text-center lg:text-left text-gray-400">
+              © 2021 Loopstudios. All rights reserved. Created by
+              <a
+                href="https://www.linkedin.com/in/muhammad-fachrezi-barus/"
+                class="text-blue-600 hover:text-blue-200 transition-colors duration-200"
+                >Fachrezi</a
+              >
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   </body>
